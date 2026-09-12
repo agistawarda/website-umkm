@@ -12,9 +12,10 @@ body {
 }
 
 .hero {
-  padding: 36px;
+  padding: 48px;
+  font-family: Verdana, sans-serif;
   color: white;
-  background: #6f3b1f;
+  background: #5f0000;
   border-radius: 24px;
 }
 
@@ -36,4 +37,23 @@ button {
   background: #ffd166;
   border: 0;
   border-radius: 999px;
+}
+
+.info {
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.info li {
+  flex: 1;
+  padding: 20px;
+  color: white;
+  background: #5f0000;
+  border-radius: 8px;
+}
+
+.info strong {
+  font-size: 18px;
 }
