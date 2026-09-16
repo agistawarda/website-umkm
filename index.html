@@ -7,37 +7,79 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <main class="page">
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navigasi utama">
+        <a class="brand" href="index.html">Ruang Kopi</a>
+        <ul>
+          <li><a aria-current="page" href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang Kami</a></li>
+          <li><a href="#kontak">Kontak Singkat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <main id="konten" class="page">
       <section class="hero">
+        <div class="hero-content">
         <p class="eyebrow">UMKM Pekalongan</p>
         <h1>Ruang Kopi</h1>
         <p>Ruang Kopi hadir untuk menemani setiap momen dengan kopi pilihan dan suasana yang nyaman. Tempat yang cocok untuk bersantai, mengobrol bersama teman, atau menikmati waktu sendiri.</p>
         <button id="promoButton" type="button">Lihat Promo Hari Ini</button>
+        </div>
+        <img src="assets/images/ruang-kopi.png" alt="Ruang Kopi 1" />
       </section>
 
       <section aria-labelledby="produk-title">
         <h2 id="produk-title">Menu Favorit</h2>
-        <ul class="products">
-          <li>Kopi Susu — Rp12.000</li>
-          <li>Es Coklat — Rp12.000</li>
-          <li>Kopi Gula Aren — Rp15.000</li>
-        </ul>
+        <div class="product-list">
+          <article class="product-card">
+            <img src="assets/images/milk-coffee.jpg" alt="Milk Coffe">
+            <h3>Milk Coffee</h3>
+            <p class="price">Rp15.000</p>
+            <p>Perpaduan kopi dan susu yang creamy dengan rasa manis yang pas.</p>
+          </article>
+          <article class="product-card">
+            <img src="assets/images/coffee-latte.jpg" alt="Coffee Latte">
+            <h3>Coffee Latte</h3>
+            <p class="price">Rp18.000</p>
+            <p>Perpaduan espresso dan susu yang lembut dengan rasa kopi yang ringan dan creamy.</p>
+          </article>
+          <article class="product-card">
+            <img src="assets/images/palm-sugar-coffee.jpg" alt="Palm Sugar Coffe">
+            <h3>Palm Sugar Coffee</h3>
+            <p class="price">Rp20.000</p>
+            <p>Perpaduan kopi, susu, dan gula aren dengan rasa manis yang nikmat.</p>
+          </article>
+        </div>
       </section>
 
+      <aside class="recommendation">
+      <h2>Baru pertama kali ke Ruang Kopi?</h2>
+      <p>Cobain Milk Coffee dulu — perpaduan kopi dan susu yang creamy, cocok untuk menemani waktu santai.</p>
+      </aside>
+
       <section aria-labelledby="info-title">
-  <h2 id="info-title">Informasi</h2>
-  <ul class="info">
-    <li>
-      <strong>Jam Buka</strong><br>
-      09.00 - 22.00 WIB
-    </li>
-    <li>
-      <strong>Lokasi</strong><br>
-      Kedungwuni, Pekalongan
-    </li>
-  </ul>
-</section>
+      <h2 id="info-title">Informasi</h2>
+      <ul class="info">
+        <li>
+        <h3>Jam Buka</h3>
+        09.00 - 22.00 WIB
+        </li>
+        <li>
+        <h3>Lokasi</h3>
+        Kedungwuni, Pekalongan
+        </li>
+        <li id="kontak">
+        <h3>Kontak Singkat</h3> <a href="https://wa.me/6289526345477">Hubungi melalui WhatsApp</a>
+        </li>
+      </ul>
+      </section>
+
     </main>
+    <footer class="site-footer">
+      <p>&copy; 2026 Ruang Kopi. Data pada halaman ini bersifat dummy.</p>
+    </footer>
     <script src="js/script.js"></script>
   </body>
 </html>
