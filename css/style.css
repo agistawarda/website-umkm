@@ -90,6 +90,10 @@ button {
   font-size: 18px;
 }
 
+.info a {
+  color: #8d5a3b;
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -155,10 +159,10 @@ button {
 }
 
 .nav a[aria-current="page"] {
-  font-weight: 800;
+  font-weight: 700;
   color: white;
   background: #8d5a3b;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 8px;
 }
 
@@ -370,4 +374,63 @@ audio {
   background: white;
   border: 2px solid #8d5a3b;
   border-radius: 8px;
+}
+
+.field { 
+    margin-bottom: 16px; 
+}
+
+.field label { 
+    display: block; 
+    margin-bottom: 6px; 
+}
+
+fieldset { 
+    margin: 0 0 16px; 
+}
+
+#preview-form { 
+    padding: 16px; 
+    white-space: pre-wrap; 
+    background: white; 
+    border: 1px solid #dccbbc; 
+}
+
+form,
+pre {
+  background: white;
+  border: 2px solid #8d5a3b;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+label,
+legend {
+  font-weight: 700;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  padding: 10px;
+}
+
+fieldset {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 14px;
+  border: 1px solid #ead8c3;
+  border-radius: 12px;
+}
+
+button {
+  cursor: pointer;
 }
