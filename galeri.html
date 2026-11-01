@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeri Ruang Kopi - Website UMKM</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#konten">Lewati ke konten utama</a>
@@ -14,7 +15,9 @@
         <img src="assets/images/logo.jpeg" width="640" height="360" alt="Logo Ruang Kopi">
         Ruang Kopi
         </a>    
-        <ul>
+        <button class="menu-toggle" id="menuToggle" type="button" 
+        aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="navMenu">☰</button>
+        <ul id="navMenu">
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="produk.html">Produk</a></li>
@@ -79,5 +82,6 @@
     <footer class="site-footer">
     <p>&copy; 2026 Ruang Kopi. Data pada halaman ini bersifat dummy.</p>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
