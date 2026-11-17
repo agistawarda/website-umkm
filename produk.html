@@ -40,14 +40,14 @@
         <h2 id="kategori-title">Kategori Produk</h2>
         <ul class="kategori-info">
           <li>
-            <h3>Paket Minum di Tempat</h3>
+            <h3>Paket Minum</h3>
             <p>
               Pilihan kopi yang disajikan langsung untuk dinikmati sambil
               bersantai di Ruang Kopi.
             </p>
           </li>
           <li>
-            <h3>Paket Seduh di Rumah</h3>
+            <h3>Paket Seduh</h3>
             <p>
               Pilihan kopi untuk dibawa pulang dan diseduh sendiri di rumah
               sesuai waktu santai kamu.
@@ -56,123 +56,24 @@
         </ul>
       </section>
 
-      <section aria-labelledby="semua-produk-title">
-        <h2 id="semua-produk-title">Semua Produk</h2>
-        <p>
-          Lihat semua pilihan kopi Ruang Kopi yang tersedia untuk menemani
-          berbagai momen.
-        </p>
-
-        <div class="product-grid--two">
-          <figure class="product-card">
-            <img src="assets/images/milk-coffee.jpg" width="640" height="360" loading="lazy" alt="Milk Coffee" />
-            <figcaption>
-              <h3>Milk Coffee</h3>
-              <p class="price">Rp15.000</p>
-              <p>
-                Perpaduan kopi dan susu yang creamy dengan rasa manis yang pas.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="product-card">
-            <img src="assets/images/coffee-latte.jpg" width="640" height="360" loading="lazy" alt="Coffee Latte" />
-            <figcaption>
-              <h3>Coffee Latte</h3>
-              <p class="price">Rp18.000</p>
-              <p>
-                Perpaduan espresso dan susu yang lembut dengan rasa kopi yang
-                ringan.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="product-card">
-            <img
-              src="assets/images/palm-sugar-coffee.jpg" width="640" height="360" loading="lazy" alt="Palm Sugar Coffee"
-            />
-            <figcaption>
-              <h3>Palm Sugar Coffee</h3>
-              <p class="price">Rp20.000</p>
-              <p>
-                Perpaduan kopi, susu, dan gula aren dengan rasa manis yang
-                nikmat.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure class="product-card">
-            <img src="assets/images/mocha-latte.jpg" width="640" height="360" loading="lazy" alt="Mocha Latte" />
-            <figcaption>
-              <h3>Mocha Latte</h3>
-              <p class="price">Rp22.000</p>
-              <p>
-                Perpaduan espresso, susu, dan cokelat dengan rasa manis serta
-                tekstur creamy.
-              </p>
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section aria-labelledby="produk-pilihan-title">
-        <h2 id="produk-pilihan-title">Produk Pilihan</h2>
-
-        <div class="product-grid">
-          <article class="product-card">
-            <span class="product-badge">Favorit</span>
-            <h3>Milk Coffee</h3>
-            <p>
-              Perpaduan kopi dan susu yang creamy dengan rasa manis yang pas.
-            </p>
-            <p class="price">Rp15.000</p>
-            <div class="card-actions">
-              <a class="button" href="kontak.html">Tanya produk</a>
-              <a href="#harga-tempat-title">Lihat tabel harga</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <span class="product-badge">Terlaris</span>
-            <h3>Palm Sugar Coffee</h3>
-            <p>
-              Perpaduan kopi, susu, dan gula aren dengan rasa manis yang nikmat.
-            </p>
-            <p class="price">Rp20.000</p>
-            <div class="card-actions">
-              <a class="button" href="kontak.html">Tanya produk</a>
-              <a href="#harga-tempat-title">Lihat tabel harga</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <span class="product-badge">Populer</span>
-            <h3>Mocha Latte</h3>
-            <p>
-              Perpaduan espresso, susu, dan cokelat dengan rasa manis serta
-              tekstur creamy.
-            </p>
-            <p class="price">Rp22.000</p>
-            <div class="card-actions">
-              <a class="button" href="kontak.html">Tanya produk</a>
-              <a href="#harga-tempat-title">Lihat tabel harga</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section class="section" aria-labelledby="produk-dinamis-title">
         <div class="section-header">
-        <p class="eyebrow">Data JavaScript</p>
-        <h2 id="produk-dinamis-title">Produk Kopi Kami</h2>
-        <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
-        <p id="produk-unggulan"></p>
+          <h2 id="produk-dinamis-title">Produk Kopi Ruang Kopi</h2>
+          <p id="produk-ringkasan">Data produk akan dimuat melalui JavaScript.</p>
         </div>
+
+        <div class="filter-bar" aria-label="Filter kategori produk">
+          <button type="button" class="filter-button is-active" data-filter="Semua">Semua</button>
+          <button type="button" class="filter-button" data-filter="Kopi">Kopi</button>
+          <button type="button" class="filter-button" data-filter="Bundling">Bundling</button>
+          <button type="button" class="filter-button" data-filter="Makanan">Makanan</button>
+        </div>
+
         <div id="produk-dinamis" class="js-product-grid"></div>
       </section>
 
       <section aria-labelledby="harga-tempat-title">
-      <h2 id="harga-tempat-title">Paket Minum di Tempat</h2>
+      <h2 id="harga-tempat-title">Paket Minum</h2>
       <div class="table-scroll" role="region" aria-labelledby="daftar-harga-tempat-caption" tabindex="0">
         <table>
         <caption id="daftar-harga-tempat-caption">Daftar ukuran dan harga kopi untuk minum di tempat.</caption>
@@ -210,7 +111,7 @@
       </section>
 
       <section aria-labelledby="harga-rumah-title">
-        <h2 id="harga-rumah-title">Paket Seduh di Rumah</h2>
+        <h2 id="harga-rumah-title">Paket Seduh</h2>
         <div class="table-scroll" role="region" aria-labelledby="daftar-harga-rumah-caption" tabindex="0">
         <table>
         <caption id="daftar-harga-rumah-caption">Daftar bentuk dan harga kopi untuk dibawa pulang.</caption>

@@ -1,4 +1,9 @@
+
+/* =================================================
+   1. ROOT & GLOBAL
+   ================================================= */
 :root {
+  /* Warna */
   --color-primary: #3b2116;
   --color-primary-strong: #24120b;
   --color-text: #2b1a12;
@@ -7,11 +12,15 @@
   --color-surface-soft: #fff8f0;
   --color-border: #dccbbc;
   --color-focus: #1d4ed8;
+
+  /* Spacing */
   --space-1: 0.5rem;
   --space-2: 0.75rem;
   --space-3: 1rem;
   --space-4: 1.5rem;
   --space-5: 2rem;
+
+  /* Radius & Shadow */
   --radius-sm: 0.5rem;
   --radius-md: 0.875rem;
   --radius-lg: 1.25rem;
@@ -25,7 +34,9 @@
   box-sizing: border-box;
 }
 
-html { color-scheme: light; }
+html {
+  color-scheme: light;
+}
 
 body {
   margin: 0;
@@ -36,23 +47,74 @@ body {
   line-height: 1.6;
 }
 
-.products {
-  padding-left: 1.2rem;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-button {
-  padding: 12px 18px;
-  color: #2f2118;
-  font-weight: 700;
-  cursor: pointer;
-  background: #ffd166;
-  border: 0;
-  border-radius: 999px;
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary-strong);
+}
+
+p,
+li {
+  max-width: 68ch;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+/* Fokus keyboard */
+a:focus-visible,
+button:focus-visible,
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -5rem;
+  left: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-surface);
+  background: var(--color-text);
+}
+
+.skip-link:focus {
+  top: var(--space-3);
+}
+
+/* =================================================
+   2. NAVBAR
+   ================================================= */
+.site-header {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav,
+.page {
+  width: min(100% - 2rem, 60rem);
+  margin-inline: auto;
 }
 
 .nav {
   max-width: 920px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -82,108 +144,6 @@ button {
   list-style: none;
 }
 
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #2563eb;
-  outline-offset: 3px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-figure {
-  margin: 0 0 24px;
-  margin-inline: 0;
-}
-
-figcaption {
-  margin-top: 8px;
-  color: var(--color-muted);
-}
-
-form,
-pre {
-  background: white;
-  border: 1px solid #ead8c3;
-  border-radius: 16px;
-  padding: 18px;
-}
-
-label,
-legend {
-  font-weight: 700;
-}
-
-input,
-select,
-textarea,
-button {
-  font: inherit;
-  padding: 10px;
-}
-
-fieldset {
-  display: grid;
-  gap: 8px;
-  margin: 0 0 var(--space-3);
-  padding: var(--space-3);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  color: var(--color-primary);
-}
-
-a:hover {
-  color: var(--color-primary-strong);
-}
-
-:focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 3px;
-}
-
-.skip-link {
-  position: absolute;
-  top: -5rem;
-  left: var(--space-3);
-  padding: var(--space-2) var(--space-3);
-  color: var(--color-surface);
-  background: var(--color-text);
-}
-
-.skip-link:focus {
-  top: var(--space-3);
-}
-
-.site-header,
-.site-footer {
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-footer {
-  margin-top: var(--space-5);
-  color: var(--color-muted);
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 0;
-}
-
-.nav,
-.page {
-  width: min(100% - 2rem, 60rem);
-  margin-inline: auto;
-}
-
 .nav li {
   display: inline-block;
   margin: 0;
@@ -198,41 +158,41 @@ a:hover {
   border-radius: var(--radius-sm);
 }
 
-.page {
-  padding-block: var(--space-5);
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.2;
-  text-wrap: balance;
-}
-
-h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
-}
-
-p,
-li {
-  max-width: 68ch;
-}
-
-.eyebrow {
-  margin: 0 0 8px;
+/* Tombol menu navigasi */
+.menu-toggle {
+  display: none;
+  padding: 8px 12px;
   color: var(--color-primary);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.hero .eyebrow {
-  color: #fef3c7;
+/* =================================================
+   3. TOMBOL
+   ================================================= */
+button {
+  padding: 12px 18px;
+  color: #2f2118;
+  font-weight: 700;
+  cursor: pointer;
+  background: #ffd166;
+  border: 0;
+  border-radius: 999px;
 }
 
-.price {
-  color: var(--color-primary-strong);
-  font-weight: 800;
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  padding: 10px;
+}
+
+button {
+  cursor: pointer;
 }
 
 .button,
@@ -255,6 +215,7 @@ button:hover {
   background: var(--color-primary-strong);
 }
 
+/* Tombol pada hero */
 .hero button {
   color: var(--color-text);
   background: #fef3c7;
@@ -265,6 +226,46 @@ button:hover {
   background: #fde68a;
 }
 
+/* =================================================
+   4. HERO & JUDUL
+   ================================================= */
+.page {
+  padding-block: var(--space-5);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--color-primary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-5);
+  color: var(--color-surface);
+  background: var(--color-primary);
+  border-radius: var(--radius-xl);
+}
+
+.hero .eyebrow {
+  color: #fef3c7;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+/* =================================================
+   5. KARTU & GRID
+   ================================================= */
+
+/* Dasar tampilan kartu */
 .product-card,
 .media-card,
 table,
@@ -275,6 +276,72 @@ form {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid galeri */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.product-grid--two {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+/* Badge produk */
+.product-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: var(--space-3);
+  padding: 0.25rem var(--space-2);
+  color: var(--color-surface);
+  font-size: 0.875rem;
+  font-weight: 900;
+  background: #3b2116;
+  border-radius: var(--radius-sm);
+}
+
+/* Aksi pada kartu */
+.card-actions {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+/* =================================================
+   6. GAMBAR, FIGURE & MEDIA
+   ================================================= */
+figure {
+  margin: 0 0 24px;
+  margin-inline: 0;
+}
+
+figcaption {
+  margin-top: 8px;
+  color: var(--color-muted);
+}
+
+audio {
+  max-width: 100%;
+}
+
+/* =================================================
+   7. HARGA & TABEL
+   ================================================= */
+.price {
+  color: var(--color-primary-strong);
+  font-weight: 800;
 }
 
 caption {
@@ -289,6 +356,7 @@ table {
   border-collapse: collapse;
   border-radius: 0;
   table-layout: fixed;
+  margin-block: 0 var(--space-3);
 }
 
 th,
@@ -300,6 +368,46 @@ td {
 
 th {
   background: var(--color-surface-soft);
+}
+
+/* Tabel yang dapat digulir */
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.table-scroll table {
+  min-width: 40rem;
+}
+
+/* =================================================
+   8. FORM
+   ================================================= */
+form,
+pre {
+  background: white;
+  border: 1px solid #ead8c3;
+  border-radius: 16px;
+  padding: 18px;
+}
+
+label,
+legend {
+  font-weight: 700;
+}
+
+fieldset {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
 .field {
@@ -332,10 +440,7 @@ input[type="checkbox"] {
   width: auto;
 }
 
-audio {
-  max-width: 100%;
-}
-
+/* Preview form */
 #preview-form {
   padding: var(--space-3);
   white-space: pre-wrap;
@@ -344,102 +449,140 @@ audio {
   border-radius: var(--radius-sm);
 }
 
-.product-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
+/* =================================================
+   9. BAGIAN PRODUK DARI DATA JAVASCRIPT
+   ================================================= */
 
-.product-grid--two {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-}
-
-.product-badge {
-  position: absolute;
-  top: -0.75rem;
-  left: var(--space-3);
-  padding: 0.25rem var(--space-2);
-  color: var(--color-surface);
-  font-size: 0.875rem;
-  font-weight: 900;
-  background: #3b2116;
-  border-radius: var(--radius-sm);
-}
-
-.card-actions {
-  display: flex;
-  gap: var(--space-2);
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  align-items: center;
-  padding: var(--space-5);
-  color: var(--color-surface);
-  background: var(--color-primary);
-  border-radius: var(--radius-xl);
-}
-
-.hero-image {
-  width: 100%;
-  border-radius: var(--radius-md);
-}
-
-.product-grid,
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-}
-
-.form-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  flex-wrap: wrap;
-}
-
-.form-actions span {
-  color: var(--color-muted);
-  font-size: 0.875rem;
-}
-
-.table-scroll {
-  max-width: 100%; overflow-x: auto; 
-}
-
-.table-scroll:focus-visible { 
-  outline: 3px solid var(--color-focus); outline-offset: 3px; 
-}
-
-.table-scroll table { 
-  min-width: 40rem; 
-}
-
+/* Grid produk dinamis */
 .js-product-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
 }
 
-.menu-toggle {
-  display: none;
-  padding: 8px 12px;
-  color: var(--color-primary);
-  background: transparent;
-  border: none;
-  font-size: 22px;
-  line-height: 1;
+/* Kartu produk dinamis */
+.js-product-card {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+/* Jarak teks dalam kartu */
+.js-product-card p {
+  margin-block: 0.4rem;
+}
+
+/* Status stok */
+.stock-badge {
+  display: inline-flex;
+  margin-block-start: var(--space-2);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.stock-badge.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.stock-badge.empty {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Nama produk dan badge unggulan */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-header h3 {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.badge-unggulan {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  background: #fef08a;
+  color: #854d0e;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Ringkasan produk unggulan */
+#produk-unggulan {
+  font-weight: 700;
+  color: var(--color-primary, #6f3b1f);
+}
+
+/* =================================================
+   10. FILTER KATALOG PRODUK
+   ================================================= */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.filter-button {
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--color-text, #1f2937);
+  padding: 0.65rem 1rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
+.filter-button:hover,
+.filter-button:focus-visible {
+  border-color: var(--color-primary, #2563eb);
+  outline: 3px solid rgb(37 99 235 / 20%);
+  outline-offset: 2px;
+}
+
+.filter-button.is-active {
+  background: var(--color-primary, #2563eb);
+  border-color: var(--color-primary, #2563eb);
+  color: #ffffff;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  border: 1px dashed #94a3b8;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  color: #64748b;
+}
+
+/* =================================================
+   11. FOOTER
+   ================================================= */
+.site-footer {
+  margin-top: var(--space-5);
+  color: var(--color-muted);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 0;
+}
+
+/* =================================================
+   12. RESPONSIF
+   ================================================= */
+
+/* Tablet kecil */
 @media (max-width: 671px) {
   .nav {
     position: relative;
@@ -465,6 +608,7 @@ audio {
   }
 }
 
+/* Layar minimal 42rem */
 @media (min-width: 42rem) {
   .nav ul {
     flex-direction: row;
@@ -479,6 +623,7 @@ audio {
   }
 }
 
+/* Layar minimal 48rem */
 @media (min-width: 48rem) {
   .js-product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -487,12 +632,9 @@ audio {
   .hero {
     grid-template-columns: 1.2fr 0.8fr;
   }
-
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
+/* Layar minimal 60rem */
 @media (min-width: 60rem) {
   .js-product-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -503,70 +645,4 @@ audio {
     align-items: center;
     justify-content: space-between;
   }
-
-  .product-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
-
-.js-product-card {
-  padding: var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-}
-
-.stock-badge {
-  display: inline-flex;
-  margin-block-start: var(--space-2);
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  background: #dcfce7;
-  color: #166534;
-}
-
-.stock-badge.warning {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.stock-badge.empty {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.product-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-}
-
-.product-header h3 {
-  margin: 0;
-  white-space: nowrap;
-}
-
-.badge-unggulan {
-  display: inline-block;
-  padding: 3px 8px;
-  font-size: 11px;
-  font-weight: 800;
-  background: #fef08a;
-  color: #854d0e;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.stock-badge.warning {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-#produk-unggulan {
-  font-weight: 700;
-  color: var(--color-primary, #6f3b1f);
-}
-
